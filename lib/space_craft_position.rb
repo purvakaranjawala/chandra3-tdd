@@ -27,4 +27,36 @@ module SpaceCraftPosition
     }
     @direction = directions[@direction]
   end
+
+  def turn_left
+    directions = {
+      "N" => "W",
+      "S" => "E",
+      "E" => "N",
+      "W" => "S",
+      "Up" => "N",
+      "Down" => "S"
+    }
+    @direction = directions[@direction]
+  end
+
+  def turn_up
+    directions = {
+      "N" => "Up",
+      "S" => "Down",
+      "E" => "Up",
+      "W" => "Down"
+    }
+    @direction = directions[@direction]
+  end
+  
+  def turn_down
+    directions = {
+      "N" => "Down",
+      "S" => "Up",
+      "E" => "Down",
+      "W" => "Up"
+    }
+    @direction = directions[@direction]
+  end
 end
