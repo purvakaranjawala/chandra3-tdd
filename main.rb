@@ -15,6 +15,7 @@ def main
   puts "Enter initial direction N, S, E, W, Up, Down"
   initial_direction = gets.chomp
   app = SpaceCraft.new(starting_point, initial_direction, commands.reject(&:empty?))
+  puts "Position: #{app.position}"
+  puts "Direction: #{app.direction}"
 end
-
 main
