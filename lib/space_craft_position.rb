@@ -15,4 +15,16 @@ module SpaceCraftPosition
       @position[2] -= 1
     end
   end
+
+  def turn_right
+    directions = {
+      "N" => "E",
+      "S" => "W",
+      "E" => "S",
+      "W" => "N",
+      "Up" => "S",
+      "Down" => "N"
+    }
+    @direction = directions[@direction]
+  end
 end
