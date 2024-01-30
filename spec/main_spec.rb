@@ -1,17 +1,17 @@
-require_relative '../main'
+require 'space_craft'
+require 'pry'
 
 describe "Main" do
   context "for invalid input" do
     it "system should exit on initial direction not valid" do
       starting_point = [0,0,0]
       initial_direction = 'r'
-      commands = ['f', 'r', 'b', 'l'] 
+      commands = ['f', 'r', 'b', 'l']
       begin
-        # below class needs to the created in later stage
-        SpaceCraft.new(starting_point, initial_direction, commands)
+        allow_any_instance_of(SpaceCraft.new(starting_point, initial_direction, commands)).to receive(:initialize_direction).with(initial_direction)
       rescue SystemExit => e
-        binding.pry
-        expect(e.status).to eq 1
+        puts "Got SystemExit: #{e.inspect}"
+        expect(e.status).to eq 1 
       end
     end
 
@@ -20,10 +20,11 @@ describe "Main" do
       initial_direction = 'N'
       commands = ['p']
       begin
-        SpaceCraft.new(starting_point, initial_direction, commands)
+        allow_any_instance_of(SpaceCraft.new(starting_point, initial_direction, commands)).to receive(:initialize_direction).with(initial_direction)
       rescue SystemExit => e
+        puts "Got SystemExit: #{e.inspect}"
         expect(e.status).to eq 2
-      end 
+      end
     end
   end
 end

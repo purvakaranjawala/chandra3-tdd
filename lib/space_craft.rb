@@ -39,7 +39,7 @@ class SpaceCraft
       @direction = initial_direction
     else
       puts 'Not a valid direction'
-      exit
+      exit(1)
     end
   end
 
