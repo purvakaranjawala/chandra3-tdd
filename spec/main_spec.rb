@@ -1,5 +1,6 @@
 require 'space_craft'
 require 'pry'
+require './spec/spec_helper'
 
 describe "Main" do
   context "for invalid input" do
