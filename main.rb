@@ -1,4 +1,5 @@
 require_relative 'lib/space_craft'
+require 'simplecov'
 
 def main
   puts 'Enter starting point coordinates x,y,z'
@@ -18,4 +19,7 @@ def main
   puts "Position: #{app.position}"
   puts "Direction: #{app.direction}"
 end
-main
+
+SimpleCov.start do
+  main
+end
